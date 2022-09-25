@@ -3,6 +3,9 @@ import { Stack } from "@mui/system";
 import { useState } from "react";
 import create from "zustand";
 import "./App.css";
+import { DisplayCount } from "./components/DisplayCount";
+import { Fuga } from "./scenes/FugaComponents/components/Fuga";
+import { Hoge } from "./scenes/HogeComponents/components/Hoge";
 
 interface CountState {
   count: number;
@@ -20,10 +23,8 @@ function App() {
   return (
     <div className="App">
       <Stack spacing={5}>
-        {count}
-        <Button variant="contained" onClick={() => increment()}>
-          increment
-        </Button>
+        <Hoge />
+        <Fuga />
       </Stack>
     </div>
   );
