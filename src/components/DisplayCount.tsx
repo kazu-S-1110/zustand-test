@@ -5,12 +5,14 @@ type DisplayCountProps = {
   label?: string;
   count: number;
   onUpdate: () => void;
+  onReset?: () => void;
 };
 
 export const DisplayCount: FC<DisplayCountProps> = ({
   label,
   count,
   onUpdate,
+  onReset,
 }) => {
   return (
     <Stack spacing={3}>
@@ -23,6 +25,11 @@ export const DisplayCount: FC<DisplayCountProps> = ({
       <Button variant="contained" onClick={() => onUpdate()}>
         update
       </Button>
+      {onReset && (
+        <Button variant="contained" onClick={() => onReset()}>
+          reset
+        </Button>
+      )}
     </Stack>
   );
 };

@@ -1,20 +1,13 @@
-import { Button } from "@mui/material";
 import { Stack } from "@mui/system";
 import "./App.css";
-import createContext from "zustand/context";
 import { Fuga } from "./scenes/FugaComponents/components/Fuga";
-import { Hoge } from "./scenes/HogeComponents/components/Hoge";
-import { CountState, useCountStore } from "./context/store";
-
-const { Provider, useStore } = createContext();
+import { ZustandComponent } from "./scenes/ZustandComponents/components/ZustandComponent";
 
 function App() {
   return (
     <div className="App">
       <Stack spacing={5}>
-        <Provider createStore={useCountStore}>
-          <Hoge />
-        </Provider>
+        <ZustandComponent />
         <Fuga />
       </Stack>
     </div>

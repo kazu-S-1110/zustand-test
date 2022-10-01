@@ -5,11 +5,15 @@ import { DisplayCount } from "../../../components/DisplayCount";
 import { CountState, useCountStore } from "../../../context/store";
 import { HogePresenter } from "../domain/HogePresenter";
 
-const { useStore } = createContext();
+export const ZustandComponent = () => {
+  const { count, increment, resetCount } = useCountStore();
 
-export const Hoge = () => {
-  const { count, increment } = HogePresenter();
-  const state = useStore(useCountStore);
-
-  return <DisplayCount label="Hoge" count={count} onUpdate={increment} />;
+  return (
+    <DisplayCount
+      label="this is zustandState"
+      count={count}
+      onUpdate={increment}
+      onReset={resetCount}
+    />
+  );
 };
