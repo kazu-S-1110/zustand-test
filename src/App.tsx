@@ -9,6 +9,7 @@ function App() {
       <Stack spacing={5}>
         <ZustandComponent />
         <Fuga />
+        hogehoge fugaguga
       </Stack>
     </div>
   );
